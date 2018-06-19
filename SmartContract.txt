@@ -1,0 +1,74 @@
+
+npm i -D webpack react react-dom babel-core babel-loader babel-preset-react babel-preset-env css-loader style-loader json-loader web3@0.20.0
+
+
+const path = require('path')
+module.exports = {
+  entry: path.join(__dirname, 'src/js', 'index.js'), // Our frontend will be inside the src folder
+  output: {
+   path: path.join(__dirname, 'dist'),
+   filename: 'build.js' // The final file will be created in dist/build.js
+  },
+  module: {
+   loaders: [{
+    test: /\.css$/, // To load the css in react
+    use: ['style-loader', 'css-loader'],
+    include: /src/
+   }, {
+    test: /\.jsx?$/, // To load the js and jsx files
+    loader: 'babel-loader',
+    exclude: /node_modules/,
+    query: {
+    presets: ['es2015', 'react', 'stage-2']
+    }
+   }, {
+    test: /\.json$/, // To load the json files
+    loader: 'json-loader'
+   }]
+  }
+}
+
+METAMASK.IO 
+12 words pass phrase:
+	sword table lend purchase twin hundred now wage custom smooth wreck evil
+private key: 
+	b61356b03886c0bd021cc028792c171637b493c6ef5d311d9bd1ca6bfa2a26f7
+Account:
+	0xb3E962BA78e28FC0B8eCC5CD9017E00443cDDEd1
+contract address:
+	0x2eda6123394810d00ee80abbd55509336a29f267
+
+	
+const MyContract = web3.eth.contract([
+    {"constant": false, "inputs": [], "name": "generateNumberWinner", "outputs": [], "payable": false, "type": "function" },  
+    { "constant": true, "inputs": [], "name": "numberOfBets", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "type": "function" }, 
+    { "constant": false, "inputs": [{ "name": "player", "type": "address" }], "name": "checkPlayerExists", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "type": "function" }, 
+    { "constant": false, "inputs": [], "name": "kill", "outputs": [], "payable": false, "type": "function" }, 
+	{ "constant": false, "inputs": [], "name": "resetData", "outputs": [], "payable": false, "type": "function" }, 
+    { "constant": false, "inputs": [{ "name": "maxBets", "type": "uint256" }], "name": "setMaxAmountOfBets", "outputs": [], "payable": false, "type": "function" }, 
+	{ "constant": false, "inputs": [{ "name": "number", "type": "uint256" }], "name": "bet", "outputs": [], "payable": true, "type": "function" }, 
+	{ "constant": false, "inputs": [], "name": "distributePrizes", "outputs": [], "payable": false, "type": "function" }, 
+	{ "constant": true, "inputs": [], "name": "numberWinner", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "type": "function" }, 
+	{ "constant": true, "inputs": [], "name": "minimumBet", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "type": "function" }, 
+	{ "constant": true, "inputs": [], "name": "maxAmountOfBets", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "type": "function" }, 
+	{ "constant": true, "inputs": [{ "name": "", "type": "uint256" }], "name": "players", "outputs": [{ "name": "", "type": "address" }], "payable": false, "type": "function" }, 
+	{ "constant": true, "inputs": [], "name": "totalBet", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "type": "function" }, 
+	{ "inputs": [{ "name": "_minimumBet", "type": "uint256" }, { "name": "_maxAmountOfBets", "type": "uint256" }], "payable": false, "type": "constructor" }, 
+	{ "payable": true, "type": "fallback" }
+])
+
+
+
+
+    "build": "webpack",
+    "start": "node server.js"
+
+
+
+
+
+
+
+
+
+
